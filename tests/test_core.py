@@ -1,13 +1,12 @@
 """Tests standard tap features using the built-in SDK tests library."""
 
-import datetime
 
 from singer_sdk.testing import get_tap_test_class
 
 from tap_instantly_ai.tap import TapInstantlyAI
 
 SAMPLE_CONFIG = {
-    "start_date": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d"),
+    "start_date": "2024-01-01",
 }
 
 # Run standard built-in tap tests from the SDK:
