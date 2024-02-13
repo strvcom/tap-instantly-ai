@@ -1,0 +1,28 @@
+version: 1
+send_anonymous_usage_stats: false
+project_id: "tap-instantly-ai"
+default_environment: dev
+environments:
+- name: dev
+plugins:
+  extractors:
+  - name: "tap-instantly-ai"
+    namespace: "tap_instantly_ai"
+    pip_url: -e .
+    capabilities:
+    - state
+    - catalog
+    - discover
+    - about
+    - stream-maps
+    settings:
+    - name: api_key
+      kind: password
+      label: API Key
+      description: API Key for InstantlyAI
+    - name: start_date
+      label: Earliest datetime to get data from
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
