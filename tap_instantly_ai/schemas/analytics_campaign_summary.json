@@ -60,7 +60,7 @@
             ]
         },
         "downloaded_at": {
-            "format": "date-time",
+            "format": "timestamp",
             "type": [
                 "string",
                 "null"

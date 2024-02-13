@@ -1,4 +1,5 @@
 {
+    "$schema": "http://json-schema.org/schema#",
     "type": [
         "object",
         "null"
@@ -43,6 +44,13 @@
         "leads_read": {
             "type": [
                 "integer",
+                "null"
+            ]
+        },
+        "downloaded_at": {
+            "format": "timestamp",
+            "type": [
+                "string",
                 "null"
             ]
         }
