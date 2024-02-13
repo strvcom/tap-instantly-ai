@@ -26,6 +26,6 @@ jobs:
         poetry install
     - name: Test with pytest
       env:
-        TAP_INSTANTLYAI_API_KEY: ${{ secrets.TAP_INSTANTLYAI_API_KEY }}
+        TAP_INSTANTLYAI_API_KEY: ${{ secrets.TAP_INSTANTLY_AI_API_KEY }}
       run: |
         poetry run pytest
