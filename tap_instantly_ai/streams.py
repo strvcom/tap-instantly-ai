@@ -20,7 +20,7 @@ SCHEMAS_DIR = importlib_resources.files(__package__) / "schemas"
 
 
 class CampaignsStream(InstantlyAIStream):
-    """Define custom stream."""
+    """Campaigns stream."""
 
     name = "campaigns"
     path = "/v1/campaign/list"
@@ -72,7 +72,7 @@ class CampaignsStream(InstantlyAIStream):
 
     
 class CampaignStatusStream(InstantlyAIStream):
-    """Define stream to fetch campaign details."""
+    """Campaign Status stream."""
 
     name = "campaign_status"
     path = "/v1/campaign/get/status"
@@ -100,7 +100,7 @@ class CampaignStatusStream(InstantlyAIStream):
         return params
 
 class AnalyticsCampaignSummaryStream(InstantlyAIStream):
-    """Define stream to fetch campaign accounts."""
+    """Analytics Campaign Summary stream."""
 
     name = "analytics_campaign_summary"
     path = "/v1/analytics/campaign/summary"
@@ -129,7 +129,7 @@ class AnalyticsCampaignSummaryStream(InstantlyAIStream):
     
 
 class AnalyticsCampaignCountStream(InstantlyAIStream):
-    """Define stream to fetch campaign details."""
+    """Analytics Campaign Count stream."""
 
     name = "analytics_campaign_count"
     path = "/v1/analytics/campaign/count"
