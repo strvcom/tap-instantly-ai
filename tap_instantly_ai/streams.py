@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 import typing as t
+import datetime
 
 from singer_sdk import typing as th  # JSON Schema typing helpers
 
@@ -150,5 +151,25 @@ class AnalyticsCampaignCountStream(InstantlyAIStream):
             Dictionary of URL query parameters.
         """
         params = {}
-        params["start_date"] = self.config.get("start_date")
+        params["start_date"] = datetime.datetime.now().strftime("%Y-%m-%d")
+
         return params
+    
+    def post_process(
+        self,
+        row: dict,
+        context: dict | None = None,  # noqa: ARG002
+    ) -> dict | None:
+        """Post-process a row of data.
+
+        Args:
+            row: An individual record from the stream.
+            context: The stream context.
+
+        Returns:
+            The updated record dictionary, or ``None`` to skip the record.
+        """
+        updated_row = super().post_process(row, context)
+        updated_row["start_date"] = datetime.datetime.now().strftime("%Y-%m-%d")
+
+        return updated_row
